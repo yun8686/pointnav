@@ -49,5 +49,9 @@ const puppeteer = require('puppeteer');
 
     var db = admin.database();
     var ref = db.ref("lowsonBP"); //room1要素への参照
-    ref.push(pageData);
+    ref.set(pageData);
+    await ref.on("value", (data)=>{
+      console.log('output', data.val());
+    });
+    process.exit();
 })();
