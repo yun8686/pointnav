@@ -41,7 +41,7 @@ const puppeteer = require('puppeteer');
     browser.close();
 
     var admin = require("firebase-admin");
-    var serviceAccount = require("./lowson-8f86f-firebase-adminsdk-0cvmc-f0d4776856.json");
+    var serviceAccount = require("./api-keys/firebase-secret.json");
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
       databaseURL: "https://lowson-8f86f.firebaseio.com"

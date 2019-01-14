@@ -64,3 +64,4 @@ node_modules/
 # dotenv environment variables file
 .env
 lowson-8f86f-firebase-adminsdk-0cvmc-f0d4776856.json
+api-keys/firebase-secret.json
