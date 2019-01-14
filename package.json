@@ -10,7 +10,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
-    "test": "test"
+    "test": "test",
+    "install": "npm i & cd functions & npm i"
   },
   "author": "",
   "license": "ISC"
