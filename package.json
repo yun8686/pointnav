@@ -11,7 +11,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "test",
-    "install": "npm i & cd functions & npm i"
+    "install": "npm i & cd functions & npm i",
+    "serve": "firebase serve"
   },
   "author": "",
   "license": "ISC"
