@@ -1,0 +1,72 @@
+/* font-size */
+.f-10 {
+  font-size: 10px;
+}
+
+.f-12 {
+  font-size: 12px;
+}
+
+.f-14 {
+  font-size: 12px;
+}
+
+.f-16 {
+  font-size: 16px;
+}
+
+.f-20 {
+  font-size: 20px;
+}
+
+.f-24 {
+  font-size: 24px;
+}
+
+/* フォントカラー設定 */
+.f-red {
+  color: #B12704;
+}
+
+/* paddnigを消す対応 */
+.padding-none {
+  padding: 0 !important;
+}
+
+/* アイコンの設定 */
+.cassette-mark {
+  display: inline-block;
+  width: 24px;
+}
+.cassette-mark::after {
+  content: '\f521';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.cassette-mark[data-mark="gold"] {
+  background: linear-gradient(110deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255,255,255,0.0);
+}
+
+.cassette-mark[data-mark="silver"] {
+  background: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255,255,255,0.0);
+}
+.cassette-mark[data-mark="bronze"] {
+  background: -webkit-gradient(linear, left top, right bottom, from(#97461a), color-stop(0.3, #fbd8c5), color-stop(0.8, #6c2e16), to(#efdbcd));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255,255,255,0.0);
+}
+
+.cassette-mark[data-mark="other"] {
+  color:#000;
+  text-shadow:0 0px 0 #000, 0 0px 1px rgba(0,0,0,1);
+}
+
+.cassette-mark[data-mark="other"]::after {
+  color:#fff;
+}

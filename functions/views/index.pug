@@ -7,12 +7,23 @@ block header
 block main
   ul
     - for(var　i　=　0;　i<30;i++)
-      li.card.blue-grey.lighten-4
+      li.card.grey.lighten-5
         div.card-content.row
-          img.circle.card-image.col.s4(src="https://www.lawson.co.jp/ponta/tameru/bonus/img/bp_181101_122.png")
+          .circle.card-image.col.s4.padding-none
+            img(src="https://www.lawson.co.jp/ponta/tameru/bonus/img/bp_181101_122.png")
           .col.s8
-            span.title| Title
-            p| First Line
+            div
+              p.f-14(data-campany)| 佐藤製薬
+              p.f-14(data-itemName)| ユリアージュ　ウォーターハンドクリーム
+            div
+              p.f-14(data-priceText)| 本体価格：990円(税込1,069円)
+            div.f-16.f-red
+              //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
+              span.cassette-mark(data-mark="gold")
+              span(data-point)| 100P
+                | (
+              span(data-price,data-point)| 10.69
+                | )
 
 block footer
   .container
