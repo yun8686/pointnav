@@ -29,6 +29,10 @@
 }
 
 /* paddnigを消す対応 */
+.padding-12 {
+  padding: 12px !important;
+}
+
 .padding-none {
   padding: 0 !important;
 }
