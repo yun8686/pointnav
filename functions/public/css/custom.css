@@ -37,7 +37,14 @@
   padding: 0 !important;
 }
 
+/* marginを消す対応 */
+.margin-none {
+  margin: 0 !important;
+}
+
 /* アイコンの設定 */
+
+/* 王冠 */
 .cassette-mark {
   display: inline-block;
   width: 24px;
@@ -73,4 +80,23 @@
 
 .cassette-mark[data-mark="other"]::after {
   color:#fff;
+}
+
+/* フッターボタン */
+.footer-icon::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.footer-icon[data-mark="coin"]::after {
+  content: '\f51e';
+}
+
+.footer-icon[data-mark="yen"]::after {
+  content: '\f157';
+}
+
+.footer-icon[data-mark="top"]::after {
+  content: '\f35b';
 }
