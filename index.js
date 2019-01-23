@@ -14,27 +14,50 @@ const puppeteer = require('puppeteer');
     const page = await browser.newPage();
     await page.goto('https://www.lawson.co.jp/ponta/tameru/bonus/list/1247156_3654.html'); // 表示したいURL
     const pageData = await page.evaluate(()=>{
-      var source = document.querySelectorAll('#sec-02 .rightBlock p,dd');
-      var ans = [];
-      for(var i=0;i<source.length;i+=5){
-        if(source[i].innerText == "一緒に買うとボーナスポイント") i++;
-        var item = {};
-        ans.push(item = {
-          company: source[i].innerText,
-          itemName: source[i+1].innerText,
-          priceText: source[i+2].innerText,
-          termText: source[i+3].innerText,
-          pointText: source[i+4].innerText,
-        });
-        item.point = parseInt(item.pointText);
-        try{
-          item.price = Number(item.priceText.match(/本体価格：([\d,]+)/)[1]);
-        }catch(e){
-          console.log(item.priceText);
+      var source = document.querySelectorAll('#sec-02 .rightBlock p,dd,#sec-02 img');
+      var source = document.querySelectorAll('#sec-02 .rightBlock p,dd,#sec-02 img');
+      var items = [];
+      var itemIdx = -1;
+      for(var i=0;i<source.length;i++){
+        switch(source[i].tagName.toLowerCase()){
+          case 'img':
+            ++itemIdx;
+            items[itemIdx] = [];
+            items[itemIdx].push(source[i].src);
+            break;
+          default:
+            items[itemIdx].push(source[i].innerText);
         }
-        item.unitPrice = item.price/item.point;
       }
-      return ans;
+      return items.map((item)=>{
+        if(item.length == 6){
+          return {
+            image: item[0],
+            company: item[1],
+            itemName: item[2],
+            priceText: item[3],
+            termText: item[4],
+            pointText: item[5],
+          };
+        }
+      }).map(item=>{
+        // 集計する
+        try{
+          item.point = parseInt(item.pointText);
+          item.price = Number(item.priceText.match(/本体価格：各?([\d,]+)/)[1].replace(/,/g,""));
+          item.unitRate = item.point/item.price;
+          item.unitRate = Math.round(item.unitRate * 1000)/10;
+        }catch(e){console.log(e,item);}
+        return item;
+      }).filter(v=>v)
+      .map(item=>{
+        // マークを付ける
+        if(item.unitRate >= 35.0) item.mark = "gold";
+        else if(item.unitRate >= 25.0) item.mark = "silver";
+        else if(item.unitRate >= 10.0) item.mark = "bronze";
+        else item.mark = "other";
+        return item;
+      }).sort((a,b)=>b.unitRate-a.unitRate);
     });
     console.log(pageData[0]);
     /*（何か処理）*/
@@ -48,10 +71,9 @@ const puppeteer = require('puppeteer');
     });
 
     var db = admin.database();
-    var ref = db.ref("lowsonBP"); //room1要素への参照
+    var ref = db.ref("lowsonBP2"); //room1要素への参照
     ref.set(pageData);
     await ref.on("value", (data)=>{
       console.log('output', data.val());
     });
-    process.exit();
 })();

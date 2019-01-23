@@ -1,29 +1,44 @@
 extends layout
-block content
-  <div class="widthBox">
-  <ul class="ranking">
-    - for(var　i　=　0;　i<3;i++)
-      <li class="ranking-cassette">
+block header
+  h1.f-20| サイトのタイトルを入れる
+  .card
+    .card-content.padding-12
+      h2.f-14.margin-none| このサイトはローソンポイントが貯まる商品を一覧にまとめています。
 
-        <div class="cassette-imgHolder">
-          <img class="cassette-img" src="https://www.lawson.co.jp/ponta/tameru/bonus/img/bp_181101_122.png" class="">
-        </div>
-        <div class="cassette-textBox">
-          <div class="cassette-title">
-            <p data-campany>佐藤製薬</p>
-            <p data-itemName>ユリアージュ　ウォーターハンドクリーム</p>
-          </div>
-          <div class="cassette-price">
-            <p data-priceText>本体価格：990円(税込1,069円)</p>
-          </div>
-          <div class="cassette-point">
-            <icon class="cassette-mark"></icon>
-            <span data-pointText>100P</span>（<span data-price data-point>10.69</span> 円/P）
-          </div>
-          <div class="cassette-date">
-            <span>発売期間：<span data-termText>11月6日(火)～1月28日(月)</span></span>
-          </div>
-        </div>
-      </li>
-  </ul>
-  </div>
+block main
+  ul
+    - for(var i=0;i<self.data.length;i++)
+      li.card.grey.lighten-5
+        div.card-content.row.padding-12
+          .circle.card-image.col.s4.padding-none
+            img(src=self.data[i].image)
+          .col.s8
+            div
+              p.f-14(data-campany)| #{self.data[i].campany}
+              p.f-14(data-itemName)| #{self.data[i].itemName}
+            div
+              p.f-14(data-priceText)| #{self.data[i].priceText}
+            div.f-16.f-red
+              //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
+              span.cassette-mark(data-mark=self.data[i].mark)
+              span(data-point)| #{self.data[i].pointText}
+                | (
+              span(data-price,data-point)|  #{self.data[i].unitRate} 円/P
+                | )
+
+block footer
+  .container
+    ul.container.row
+      li.row.col.s4
+        span.waves-effect.waves-light.btn-large.red.lighten-3
+          span.footer-icon(data-mark="coin")
+      li.row.col.s4
+        span.waves-effect.waves-light.btn-large.red.lighten-3
+          span.footer-icon(data-mark="yen")
+      li.row.col.s4
+        span.waves-effect.waves-light.btn-large.red.lighten-3
+          span.footer-icon(data-mark="top")
+
+  .footer-copyright
+    .container| © 2014 Copyright Text
+    a.grey-text.text-lighten-4.right| More Links

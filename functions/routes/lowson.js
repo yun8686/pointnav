@@ -1,21 +1,20 @@
 const express = require('express');
 const functions = require('firebase-functions');
 const router = express.Router();
-
-
-//var ref = db.ref("lowsonBP"); //room1要素への参照
-//ref.set(pageData);
-//ref.on("value", (data)=>{
-//  console.log('output', data.val());
-//});
-
-
+const getLowsonData = require('../connections/lowsonData');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const data = [];
-  res.render('unitPointList', {
-    data: data,
+  getLowsonData((value)=>{
+    console.log("------------------ data updated -------------------");
+    const lowsonData = value.val();
+    console.log("lowsonData", lowsonData);
+    res.render('unitPointList', {
+      self: true,
+      title: 'Node.js Test',
+      data: lowsonData,
+    });
   });
+
 });
 
 module.exports = router;
