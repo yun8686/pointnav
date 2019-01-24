@@ -74,13 +74,13 @@
 }
 
 .cassette-mark[data-mark="other"] {
-  color:#000;
-  text-shadow:0 0px 0 #000, 0 0px 1px rgba(0,0,0,1);
+  color:#aaa;
+  /* text-shadow:0 0px 0 #000, 0 0px 1px rgba(0,0,0,1); */
 }
 
-.cassette-mark[data-mark="other"]::after {
-  color:#fff;
-}
+/* .cassette-mark[data-mark="other"]::after {
+  color:#aaa;
+} */
 
 /* フッターボタン */
 .footer-icon::after {
