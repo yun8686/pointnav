@@ -1,10 +1,22 @@
 extends layout
 block header
-  h1.f-20| サイトのタイトルを入れる
+  h1.f-20| ボーナスポイント比較ナビ
   .card
     .card-content.padding-12
-      h2.f-14.margin-none| このサイトはローソンポイントが貯まる商品を一覧にまとめています。
-
+      h2.f-14.margin-none
+        span Lowsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
+        span.cassette-mark(data-mark="gold")
+        span 還元率35%以上
+        br
+        span.cassette-mark(data-mark="silver")
+        span 還元率25%以上
+        br
+        span.cassette-mark(data-mark="bronze")
+        span 還元率15%以上
+        br
+        span.cassette-mark(data-mark="other")
+        span 還元率15%未満
+        br
 block main
   ul
     - for(var i=0;i<self.data.length;i++)
@@ -23,7 +35,7 @@ block main
               span.cassette-mark(data-mark=self.data[i].mark)
               span(data-point)| #{self.data[i].pointText}
                 | (
-              span(data-price,data-point)|  #{self.data[i].unitRate} 円/P
+              span(data-price,data-point)|  #{self.data[i].unitRate} %
                 | )
 
 block footer
