@@ -1,28 +1,3 @@
-/* font-size */
-.f-10 {
-  font-size: 10px;
-}
-
-.f-12 {
-  font-size: 12px;
-}
-
-.f-14 {
-  font-size: 12px;
-}
-
-.f-16 {
-  font-size: 16px;
-}
-
-.f-20 {
-  font-size: 20px;
-}
-
-.f-24 {
-  font-size: 24px;
-}
-
 /* フォントカラー設定 */
 .f-red {
   color: #B12704;
@@ -42,8 +17,47 @@
   margin: 0 !important;
 }
 
-/* アイコンの設定 */
+/* ヘッダー */
+.header {
+  font-size: 20px;
+}
 
+/* 説明文 */
+.info-text {
+  font-size: 16px;
+  padding: none !important;
+  margin: 0;
+}
+
+.info-list {
+  margin: 0;
+  margin-top: 8px;
+}
+
+.info-item {
+  padding-bottom: 4px;
+}
+
+/* カセット */
+.card-content {
+  font-size: 14px;
+  padding: 12px !important;
+  position: relative;
+}
+
+/* 商品画像 */
+.card-image {
+  padding: none !important;
+}
+
+/* ポイント */
+.card-point {
+  color: #B12704;
+  font-size: 16px;
+}
+
+
+/* アイコンの設定 */
 /* 王冠 */
 .cassette-mark {
   display: inline-block;
@@ -75,12 +89,7 @@
 
 .cassette-mark[data-mark="other"] {
   color:#aaa;
-  /* text-shadow:0 0px 0 #000, 0 0px 1px rgba(0,0,0,1); */
 }
-
-/* .cassette-mark[data-mark="other"]::after {
-  color:#aaa;
-} */
 
 /* フッターボタン */
 .footer-icon::after {

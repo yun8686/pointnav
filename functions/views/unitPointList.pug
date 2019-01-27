@@ -1,41 +1,50 @@
 extends layout
 block header
-  h1.f-20| ボーナスポイント比較ナビ
+  h1.header ボーナスポイント比較ナビ
   .card
-    .card-content.padding-12
-      h2.f-14.margin-none
+    .card-content
+      h2.info-text
         span Lowsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
-        span.cassette-mark(data-mark="gold")
-        span 還元率35%以上
-        br
-        span.cassette-mark(data-mark="silver")
-        span 還元率25%以上
-        br
-        span.cassette-mark(data-mark="bronze")
-        span 還元率15%以上
-        br
-        span.cassette-mark(data-mark="other")
-        span 還元率15%未満
-        br
+        
+        ul.info-list
+          li.info-item
+            span.cassette-mark(data-mark="gold")
+            span 還元率
+            strong 35%
+            span 以上
+          li.info-item
+            span.cassette-mark(data-mark="silver")
+            span 還元率
+            strong 25%
+            span 以上
+          li.info-item
+            span.cassette-mark(data-mark="bronze")
+            span 還元率
+            strong 15%
+            span 以上
+          li.info-item
+            span.cassette-mark(data-mark="other")
+            span 還元率15%未満
 block main
   ul
     - for(var i=0;i<self.data.length;i++)
       li.card.grey.lighten-5
-        div.card-content.row.padding-12
+        div.card-content.row
           .circle.card-image.col.s4.padding-none
             img(src=self.data[i].image)
           .col.s8
             div
-              p.f-14(data-campany)| #{self.data[i].campany}
-              p.f-14(data-itemName)| #{self.data[i].itemName}
+              p(data-campany)| #{self.data[i].campany}
+              p(data-itemName)| #{self.data[i].itemName}
             div
-              p.f-14(data-priceText)| #{self.data[i].priceText}
+              p| 税込価格：
+                span(data-priceText)| #{self.data[i].priceText}
             div.f-16.f-red
               //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
               span.cassette-mark(data-mark=self.data[i].mark)
               span(data-point)| #{self.data[i].pointText}
-                | (
-              span(data-price,data-point)|  #{self.data[i].unitRate} %
+                |  (
+              span(data-price,data-point)|#{self.data[i].unitRate}%
                 | )
 
 block footer

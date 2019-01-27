@@ -6,7 +6,8 @@ html
     title= self.title
     script(src='/js/bundle.js')
     link(href="/css/bundle.css",type="text/css",rel="stylesheet")
-    link(href="/css/custom.css",type="text/css",rel="stylesheet")
+    link(href="/css/s_custom.css",media="(max-width: 480px)",type="text/css",rel="stylesheet")
+    link(href="/css/p_custom.css",media="(min-width: 481px)",type="text/css",rel="stylesheet")
     link(href="https://use.fontawesome.com/releases/v5.0.13/css/all.css",rel="stylesheet")
   body.grey.lighten-5
     header.container
