@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .materialize-red {
   background-color: #e51c23 !important;
 }
@@ -8622,6 +8623,114 @@ input[type=range]::-ms-thumb {
     text-align: center;
     margin-top: 1.2rem;
   }
+}
+
+/* paddnigを消す対応 */
+.padding-12 {
+  padding: 12px !important;
+}
+
+.padding-none {
+  padding: 0 !important;
+}
+
+/* marginを消す対応 */
+.margin-none {
+  margin: 0 !important;
+}
+
+/* ヘッダー */
+.header {
+  font-size: 20px;
+}
+
+/* 説明文 */
+.info-text {
+  font-size: 16px;
+  padding: none !important;
+  margin: 0;
+}
+
+.info-list {
+  margin: 0;
+  margin-top: 8px;
+}
+
+.info-item {
+  padding-bottom: 4px;
+}
+
+/* カセット */
+.card-content {
+  font-size: 14px;
+  padding: 12px !important;
+  position: relative;
+}
+
+/* 商品画像 */
+.card-image {
+  padding: none !important;
+}
+
+/* ポイント */
+.card-point {
+  color: #B12704;
+  font-size: 16px;
+}
+
+/* アイコンの設定 */
+/* 王冠 */
+.cassette-mark {
+  display: inline-block;
+  width: 24px;
+}
+
+.cassette-mark::after {
+  content: '\f521';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.cassette-mark[data-mark="gold"] {
+  background: linear-gradient(110deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+.cassette-mark[data-mark="silver"] {
+  background: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+.cassette-mark[data-mark="bronze"] {
+  background: -webkit-gradient(linear, left top, right bottom, from(#97461a), color-stop(0.3, #fbd8c5), color-stop(0.8, #6c2e16), to(#efdbcd));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+.cassette-mark[data-mark="other"] {
+  color: #aaa;
+}
+
+/* フッターボタン */
+.footer-icon::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.footer-icon[data-mark="coin"]::after {
+  content: '\f51e';
+}
+
+.footer-icon[data-mark="yen"]::after {
+  content: '\f157';
+}
+
+.footer-icon[data-mark="top"]::after {
+  content: '\f35b';
 }
 
 /*# sourceMappingURL=bundle.css.map*/
