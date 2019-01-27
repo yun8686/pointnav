@@ -6,6 +6,9 @@ const app = express();
 
 const indexRouter = require('./routes/index');
 const lowsonRouter = require('./routes/lowson');
+const sevenRouter = require('./routes/sevenEleven');
+const famimaRouter = require('./routes/famima');
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -15,5 +18,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/lowson', lowsonRouter);
+app.use('/seven', sevenRouter);
+app.use('/famima', famimaRouter);
+
+
 
 exports.app = functions.https.onRequest(app);
