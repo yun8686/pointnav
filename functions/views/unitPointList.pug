@@ -8,29 +8,29 @@ block header
         
         ul.info-list
           li.info-item
-            span.cassette-mark(data-mark="gold")
+            span.info-mark(data-mark="gold")
             span 還元率
             strong 35%
             span 以上
           li.info-item
-            span.cassette-mark(data-mark="silver")
+            span.info-mark(data-mark="silver")
             span 還元率
             strong 25%
             span 以上
           li.info-item
-            span.cassette-mark(data-mark="bronze")
+            span.info-mark(data-mark="bronze")
             span 還元率
             strong 15%
             span 以上
           li.info-item
-            span.cassette-mark(data-mark="other")
+            span.info-mark(data-mark="other")
             span 還元率15%未満
 block main
   ul
     - for(var i=0;i<self.data.length;i++)
       li.card.grey.lighten-5
         div.card-content.row
-          .circle.card-image.col.s4.padding-none
+          .circle.card-image.col.s4
             img(src=self.data[i].image)
           .col.s8
             div
@@ -39,7 +39,7 @@ block main
             div
               p| 税込価格：
                 span(data-priceText)| #{self.data[i].priceText}
-            div.f-16.f-red
+            div.card-point
               //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
               span.cassette-mark(data-mark=self.data[i].mark)
               span(data-point)| #{self.data[i].pointText}
