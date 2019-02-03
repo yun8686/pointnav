@@ -7,39 +7,50 @@ block header
         span Lowsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
 block main
   ul
-    - for(var i=0;i<self.data.length;i++)
-      li.card.grey.lighten-5
-        div.card-content.row
-          .circle.card-image.col.s4
-            img(src=self.data[i].image)
-          .col.s8
-            div
-              p(data-campany)| #{self.data[i].campany}
-              p(data-itemName)| #{self.data[i].itemName}
-            div
-              p| 税込価格：
-                span(data-priceText)| #{self.data[i].priceText}
-            div.card-point
-              //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
-              span.cassette-mark(data-mark=self.data[i].mark)
-              span(data-point)| #{self.data[i].pointText}
-                |  (
-              span(data-price,data-point)|#{self.data[i].unitRate}%
-                | )
-            div.card-pointDetail
-              |還元率
-              if self.data[i].mark == 'gold'
-                strong 35%
-                span 以上
-              else if self.data[i].mark == 'silver'
-                strong 25%
-                span 以上
-              else if self.data[i].mark == 'bronze'
-                strong 15%
-                span 以上
-              else
-                span 15%未満
-
+    - var flag = 'test';
+      - for(var i=0;i<self.data.length;i++)
+        if self.data[i].mark == 'gold' && flag != 'gold'
+          li.card-pointDetail
+            |還元率
+            strong 35%
+            span 以上
+          - flag = self.data[i].mark
+        else if self.data[i].mark == 'silver' && flag != 'silver'
+          li.card-pointDetail
+            |還元率
+            strong 25%
+            span 以上
+             #{flag}
+          - flag = self.data[i].mark
+        else if self.data[i].mark == 'bronze' && flag != 'bronze'
+          li.card-pointDetail
+            |還元率
+            strong 15%
+            span 以上
+          - flag = self.data[i].mark
+        else if self.data[i].mark == 'other' && flag != 'other'
+          li.card-pointDetail
+            |還元率
+            span 15%未満
+          - flag = self.data[i].mark
+        li.card.grey.lighten-5
+          div.card-content.row
+            .circle.card-image.col.s4
+              img(src=self.data[i].image)
+            .col.s8
+              div
+                p(data-campany)| #{self.data[i].campany}
+                p(data-itemName)| #{self.data[i].itemName}
+              div
+                p| 税込価格：
+                  span(data-priceText)| #{self.data[i].priceText}
+              div.card-point
+                //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
+                span.cassette-mark(data-mark=self.data[i].mark)
+                span(data-point)| #{self.data[i].pointText}
+                  |  (
+                span(data-price,data-point)|#{self.data[i].unitRate}%
+                  | )
 
 block footer
   .container

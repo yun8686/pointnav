@@ -30,7 +30,10 @@
   }
 
   .card-pointDetail {
-    font-size: 12px;
+    font-size: 16px;
+    margin: 16px auto;
+    padding-top: 16px;
+    border-bottom: 4px solid $c-grey;
   }
 
   /* アイコンの設定 */

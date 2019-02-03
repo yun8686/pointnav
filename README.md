@@ -37,4 +37,5 @@ Success! Logged in as メールアドレス
 >sudo npm run serve
 
 
-gitのコミット方法
+firebase更新方法
+>npm run deploy

@@ -8698,7 +8698,10 @@ input[type=range]::-ms-thumb {
     padding-top: 16px;
   }
   .card-pointDetail {
-    font-size: 16px;
+    font-size: 24px;
+    margin: 24px auto;
+    padding-top: 24px;
+    border-bottom: 4px solid #aaa;
   }
   /* アイコンの設定 */
   /* 王冠のサイズ設定 */
@@ -8795,7 +8798,10 @@ input[type=range]::-ms-thumb {
     font-size: 16px;
   }
   .card-pointDetail {
-    font-size: 12px;
+    font-size: 16px;
+    margin: 16px auto;
+    padding-top: 16px;
+    border-bottom: 4px solid #aaa;
   }
   /* アイコンの設定 */
   /* 王冠のサイズ設定 */
