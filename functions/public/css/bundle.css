@@ -8626,70 +8626,6 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (min-width: 481px) {
-  /* ヘッダー */
-  .header {
-    font-size: 24px;
-  }
-  /* 説明文 */
-  .info-text {
-    font-size: 16px;
-    padding: none !important;
-    margin: 0;
-  }
-  .info-list {
-    margin: 0;
-    margin-top: 8px;
-  }
-  .info-item {
-    padding-bottom: 4px;
-  }
-  .info-mark {
-    display: inline-block;
-    width: 24px;
-  }
-  .info-mark[data-mark="gold"] {
-    background: linear-gradient(110deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  }
-  .info-mark[data-mark="silver"] {
-    background: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  }
-  .info-mark[data-mark="bronze"] {
-    background: -webkit-gradient(linear, left top, right bottom, from(#97461a), color-stop(0.3, #fbd8c5), color-stop(0.8, #6c2e16), to(#efdbcd));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  }
-  .info-mark[data-mark="other"] {
-    color: #aaa;
-  }
-  .info-mark::after {
-    content: '\f521';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 16px;
-  }
-  /* カセット */
-  .card-content {
-    font-size: 16px;
-  }
-  .card-content p {
-    padding-top: 4px;
-  }
-  /* 商品画像 */
-  .card-image {
-    padding: none !important;
-  }
-  /* ポイント */
-  .card-point {
-    color: #B12704;
-    font-size: 24px;
-    padding-top: 16px;
-  }
-  /* アイコンの設定 */
-  /* 王冠 */
   .cassette-mark {
     display: inline-block;
     width: 44px;
@@ -8718,6 +8654,61 @@ input[type=range]::-ms-thumb {
     font-weight: 900;
     font-size: 28px;
   }
+  .footer-icon[data-mark="bars"]::after {
+    content: '\f0c9';
+  }
+  .footer-icon[data-mark="yen"]::after {
+    content: '\f157';
+  }
+  .footer-icon [data-mark="top"]::after {
+    content: '\f35b';
+  }
+  .footer-btnList .footer-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 25%;
+    display: inline-block;
+  }
+  /* ヘッダー */
+  .header {
+    font-size: 24px;
+  }
+  /* 説明文 */
+  .info-text {
+    font-size: 16px;
+    padding: 0px !important;
+    margin: 0;
+  }
+  /* カセット */
+  .card-content {
+    font-size: 16px;
+  }
+  .card-content p {
+    padding-top: 4px;
+  }
+  /* 商品画像 */
+  .card-image {
+    padding: 0px !important;
+  }
+  /* ポイント */
+  .card-point {
+    color: #B12704;
+    font-size: 24px;
+    padding-top: 16px;
+  }
+  .card-pointDetail {
+    font-size: 16px;
+  }
+  /* アイコンの設定 */
+  /* 王冠のサイズ設定 */
+  .cassette-mark {
+    display: inline-block;
+    width: 44px;
+  }
+  .cassette-mark::after {
+    font-size: 28px;
+  }
   /* フッターボタン */
   .footer-icon::after {
     font-family: 'Font Awesome 5 Free';
@@ -8736,75 +8727,9 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (max-width: 480px) {
-  /* ヘッダー */
-  .header {
-    font-size: 20px;
-  }
-  /* 説明文 */
-  .info-text {
-    font-size: 16px;
-    padding: none !important;
-    margin: 0;
-  }
-  .info-list {
-    margin: 0;
-    margin-top: 8px;
-  }
-  .info-item {
-    padding-bottom: 4px;
-  }
-  .info-mark {
-    display: inline-block;
-    width: 32px;
-  }
-  .info-mark[data-mark="gold"] {
-    background: linear-gradient(110deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  }
-  .info-mark[data-mark="silver"] {
-    background: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  }
-  .info-mark[data-mark="bronze"] {
-    background: -webkit-gradient(linear, left top, right bottom, from(#97461a), color-stop(0.3, #fbd8c5), color-stop(0.8, #6c2e16), to(#efdbcd));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  }
-  .info-mark[data-mark="other"] {
-    color: #aaa;
-  }
-  .info-mark::after {
-    content: '\f521';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 16px;
-  }
-  /* カセット */
-  .card-content {
-    font-size: 14px;
-  }
-  /* 商品画像 */
-  .card-image {
-    padding: none !important;
-  }
-  /* ポイント */
-  .card-point {
-    color: #B12704;
-    font-size: 16px;
-  }
-  /* アイコンの設定 */
-  /* 王冠 */
   .cassette-mark {
     display: inline-block;
-    width: 24px;
-  }
-  .cassette-mark::after {
-    content: '\f521';
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    font-size: 16px;
+    width: 44px;
   }
   .cassette-mark[data-mark="gold"] {
     background: linear-gradient(110deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
@@ -8824,20 +8749,68 @@ input[type=range]::-ms-thumb {
   .cassette-mark[data-mark="other"] {
     color: #aaa;
   }
+  .cassette-mark::after {
+    content: '\f521';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 28px;
+  }
+  .footer-icon[data-mark="bars"]::after {
+    content: '\f0c9';
+  }
+  .footer-icon[data-mark="yen"]::after {
+    content: '\f157';
+  }
+  .footer-icon [data-mark="top"]::after {
+    content: '\f35b';
+  }
+  .footer-btnList .footer-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 25%;
+    display: inline-block;
+  }
+  /* ヘッダー */
+  .header {
+    font-size: 20px;
+  }
+  /* 説明文 */
+  .info-text {
+    font-size: 16px;
+    padding: 0px !important;
+    margin: 0;
+  }
+  /* カセット */
+  .card-content {
+    font-size: 14px;
+  }
+  /* 商品画像 */
+  .card-image {
+    padding: 0px !important;
+  }
+  /* ポイント */
+  .card-point {
+    color: #B12704;
+    font-size: 16px;
+  }
+  .card-pointDetail {
+    font-size: 12px;
+  }
+  /* アイコンの設定 */
+  /* 王冠のサイズ設定 */
+  .cassette-mark {
+    display: inline-block;
+    width: 24px;
+  }
+  .cassette-mark::after {
+    font-size: 16px;
+  }
   /* フッターボタン */
   .footer-icon::after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 24px;
-  }
-  .footer-icon[data-mark="coin"]::after {
-    content: '\f51e';
-  }
-  .footer-icon[data-mark="yen"]::after {
-    content: '\f157';
-  }
-  .footer-icon[data-mark="top"]::after {
-    content: '\f35b';
   }
 }
 

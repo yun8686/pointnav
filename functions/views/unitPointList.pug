@@ -5,26 +5,6 @@ block header
     .card-content
       h2.info-text
         span Lowsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
-        
-        ul.info-list
-          li.info-item
-            span.info-mark(data-mark="gold")
-            span 還元率
-            strong 35%
-            span 以上
-          li.info-item
-            span.info-mark(data-mark="silver")
-            span 還元率
-            strong 25%
-            span 以上
-          li.info-item
-            span.info-mark(data-mark="bronze")
-            span 還元率
-            strong 15%
-            span 以上
-          li.info-item
-            span.info-mark(data-mark="other")
-            span 還元率15%未満
 block main
   ul
     - for(var i=0;i<self.data.length;i++)
@@ -46,19 +26,40 @@ block main
                 |  (
               span(data-price,data-point)|#{self.data[i].unitRate}%
                 | )
+            div.card-pointDetail
+              |還元率
+              if self.data[i].mark == 'gold'
+                strong 35%
+                span 以上
+              else if self.data[i].mark == 'silver'
+                strong 25%
+                span 以上
+              else if self.data[i].mark == 'bronze'
+                strong 15%
+                span 以上
+              else
+                span 15%未満
+
 
 block footer
   .container
-    ul.container.row
-      li.row.col.s4
-        span.waves-effect.waves-light.btn-large.red.lighten-3
-          span.footer-icon(data-mark="coin")
-      li.row.col.s4
-        span.waves-effect.waves-light.btn-large.red.lighten-3
-          span.footer-icon(data-mark="yen")
-      li.row.col.s4
-        span.waves-effect.waves-light.btn-large.red.lighten-3
-          span.footer-icon(data-mark="top")
+    div(style='position: relative; height: 70px;')
+    .fixed-action-btn.click-to-toggle.direction-top.direction-left(style='position: absolute; right: 24px;')
+        a.btn-floating.btn-large.red
+          span.footer-icon(data-mark="bars")
+        ul.footer-btnList
+          li
+            a.btn-floating.red(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="bars")
+          li
+            a.btn-floating.yellow.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="bars")
+          li
+            a.btn-floating.green(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="bars")
+          li
+            a.btn-floating.blue(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="bars")
 
   .footer-copyright
     .container| © 2014 Copyright Text

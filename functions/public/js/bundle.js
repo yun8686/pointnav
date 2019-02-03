@@ -95,6 +95,14 @@
 
 __webpack_require__(/*! materialize-css */ "./node_modules/materialize-css/dist/js/materialize.js");
 
+// フッターメニューのアニメーション
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.fixed-action-btn');
+  var instances = M.FloatingActionButton.init(elems, {
+    direction: 'left',
+    hoverEnabled: false
+  });
+});
 
 /***/ }),
 

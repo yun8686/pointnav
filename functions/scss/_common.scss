@@ -1,2 +1,64 @@
 // 色のカラー
 $c-red:#B12704;
+
+
+// 王冠のアイコン
+.cassette-mark {
+  display: inline-block;
+  width: 44px;
+
+  &[data-mark="gold"] {
+    background: linear-gradient(110deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.0);
+  }
+
+  &[data-mark="silver"] {
+    background: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.0);
+  }
+
+  &[data-mark="bronze"] {
+    background: -webkit-gradient(linear, left top, right bottom, from(#97461a), color-stop(0.3, #fbd8c5), color-stop(0.8, #6c2e16), to(#efdbcd));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.0);
+  }
+
+  &[data-mark="other"] {
+    color: #aaa;
+  }
+
+  &::after {
+    content: '\f521';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 28px;
+  }
+}
+
+
+// フッターの画像
+.footer-icon {
+  &[data-mark="bars"]::after {
+    content: '\f0c9';
+  }
+
+  &[data-mark="yen"]::after {
+    content: '\f157';
+  }
+
+  [data-mark="top"]::after {
+    content: '\f35b';
+  }
+}
+
+.footer-btnList {
+  .footer-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 25%;
+    display: inline-block;
+  }
+}
