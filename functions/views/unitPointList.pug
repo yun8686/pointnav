@@ -18,7 +18,6 @@ block main
           li.card-title
             span.crown-icon(data-mark=self.data[i].mark)
             strong|還元率25%以上
-             #{flag}
           - flag = self.data[i].mark
         else if self.data[i].mark == 'bronze' && flag != 'bronze'
           li.card-title
@@ -32,9 +31,9 @@ block main
           - flag = self.data[i].mark
         li.card.grey.lighten-5
           div.card-content.row
-            .circle.card-image.col.s4
+            .circle.card-image.col.s5
               img(src=self.data[i].image)
-            .col.s8
+            .card-textBox.col.s7
               div
                 p(data-campany)| #{self.data[i].campany}
                 p(data-itemName)| #{self.data[i].itemName}
@@ -49,29 +48,25 @@ block main
                 span(data-price,data-point)|#{self.data[i].unitRate}%
                   | )
               div
-                p| 税込価格：
+                p|
                   span(data-termText)| #{self.data[i].termText}
 
 block footer
   .container
-    div(style='position: relative; height: 70px;')
-    .fixed-action-btn.click-to-toggle.direction-top.direction-left(style='position: absolute; right: 24px;')
+    .fixed-action-btn.click-to-toggle
         a.btn-floating.btn-large.red
           span.footer-icon(data-mark="bars")
-        ul.footer-btnList
+        ul.footer-btnList.footer-btnList__left
           li
             a.btn-floating.red(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="bars")
           li
             a.btn-floating.yellow.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="bars")
+        ul.footer-btnList.footer-btnList__rigth
           li
-            a.btn-floating.green(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.red(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="bars")
           li
-            a.btn-floating.blue(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.yellow.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="bars")
-
-  .footer-copyright
-    .container| © 2014 Copyright Text
-    a.grey-text.text-lighten-4.right| More Links

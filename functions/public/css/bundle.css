@@ -8654,6 +8654,14 @@ input[type=range]::-ms-thumb {
     font-weight: 900;
     font-size: 28px;
   }
+  footer .container {
+    height: 100%;
+    position: relative;
+  }
+  .page-footer {
+    height: 60px;
+    padding-top: 0;
+  }
   .footer-icon[data-mark="bars"]::after {
     content: '\f0c9';
   }
@@ -8663,12 +8671,30 @@ input[type=range]::-ms-thumb {
   .footer-icon [data-mark="top"]::after {
     content: '\f35b';
   }
+  .footer-btnList {
+    display: flex;
+    width: 96px;
+    height: 40px;
+    top: 0;
+    bottom: 0 !important;
+    margin: auto !important;
+    justify-content: space-between;
+  }
   .footer-btnList .footer-icon {
     position: absolute;
     width: 100%;
     height: 100%;
-    right: 25%;
+    right: 0%;
     display: inline-block;
+  }
+  .footer-btnList__rigth {
+    right: auto !important;
+    left: 150% !important;
+    flex-direction: row-reverse;
+  }
+  .footer-btnList__left {
+    right: 150% !important;
+    left: auto !important;
   }
   /* ヘッダー */
   .header {
@@ -8768,6 +8794,14 @@ input[type=range]::-ms-thumb {
     font-weight: 900;
     font-size: 28px;
   }
+  footer .container {
+    height: 100%;
+    position: relative;
+  }
+  .page-footer {
+    height: 60px;
+    padding-top: 0;
+  }
   .footer-icon[data-mark="bars"]::after {
     content: '\f0c9';
   }
@@ -8777,12 +8811,30 @@ input[type=range]::-ms-thumb {
   .footer-icon [data-mark="top"]::after {
     content: '\f35b';
   }
+  .footer-btnList {
+    display: flex;
+    width: 96px;
+    height: 40px;
+    top: 0;
+    bottom: 0 !important;
+    margin: auto !important;
+    justify-content: space-between;
+  }
   .footer-btnList .footer-icon {
     position: absolute;
     width: 100%;
     height: 100%;
-    right: 25%;
+    right: 0%;
     display: inline-block;
+  }
+  .footer-btnList__rigth {
+    right: auto !important;
+    left: 150% !important;
+    flex-direction: row-reverse;
+  }
+  .footer-btnList__left {
+    right: 150% !important;
+    left: auto !important;
   }
   /* ヘッダー */
   .header {
@@ -8810,7 +8862,13 @@ input[type=range]::-ms-thumb {
   .card-title .crown-icon::after {
     font-size: 22px;
   }
-  /* カセット */
+  /* カードの余白部分 */
+  .card .card-content {
+    padding: 12px 8px;
+  }
+  .card .card-textBox {
+    padding-right: 0;
+  }
   .card-content {
     font-size: 14px;
     /* アイコンの設定 */
@@ -8833,6 +8891,14 @@ input[type=range]::-ms-thumb {
     font-size: 16px;
   }
   /* フッターボタン */
+  .fixed-action-btn {
+    width: 56px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding: 0;
+  }
   .footer-icon::after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;

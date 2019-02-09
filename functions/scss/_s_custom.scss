@@ -32,7 +32,18 @@
     }
   }
 
-  /* カセット */
+  /* カードの余白部分 */
+  .card {
+    .card-content {
+      padding: 12px 8px;
+    }
+
+    .card-textBox {
+      padding-right: 0;
+    }
+  }
+
+  // カードの中身
   .card-content {
     font-size: 14px;
 
@@ -60,6 +71,14 @@
   }
 
   /* フッターボタン */
+  .fixed-action-btn{
+    width:56px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding: 0;
+  }
   .footer-icon::after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
