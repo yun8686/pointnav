@@ -57,11 +57,22 @@ footer {
     content: '\f0c9';
   }
 
-  &[data-mark="yen"]::after {
-    content: '\f157';
+  &[data-mark="lowson"] {
+    background-image: url("/image/lowson.png");
+    background-size: cover;
   }
 
-  [data-mark="top"]::after {
+  &[data-mark="famima"] {
+    background-image: url("/image/famima.png");
+    background-size: cover;
+  }
+
+  &[data-mark="seven"] {
+    background-image: url("/image/seven.png");
+    background-size: cover;
+  }
+
+  &[data-mark="top"]::after {
     content: '\f35b';
   }
 }

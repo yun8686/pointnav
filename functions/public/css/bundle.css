@@ -8665,10 +8665,19 @@ input[type=range]::-ms-thumb {
   .footer-icon[data-mark="bars"]::after {
     content: '\f0c9';
   }
-  .footer-icon[data-mark="yen"]::after {
-    content: '\f157';
+  .footer-icon[data-mark="lowson"] {
+    background-image: url("/image/lowson.png");
+    background-size: cover;
   }
-  .footer-icon [data-mark="top"]::after {
+  .footer-icon[data-mark="famima"] {
+    background-image: url("/image/famima.png");
+    background-size: cover;
+  }
+  .footer-icon[data-mark="seven"] {
+    background-image: url("/image/seven.png");
+    background-size: cover;
+  }
+  .footer-icon[data-mark="top"]::after {
     content: '\f35b';
   }
   .footer-btnList {
@@ -8805,10 +8814,19 @@ input[type=range]::-ms-thumb {
   .footer-icon[data-mark="bars"]::after {
     content: '\f0c9';
   }
-  .footer-icon[data-mark="yen"]::after {
-    content: '\f157';
+  .footer-icon[data-mark="lowson"] {
+    background-image: url("/image/lowson.png");
+    background-size: cover;
   }
-  .footer-icon [data-mark="top"]::after {
+  .footer-icon[data-mark="famima"] {
+    background-image: url("/image/famima.png");
+    background-size: cover;
+  }
+  .footer-icon[data-mark="seven"] {
+    background-image: url("/image/seven.png");
+    background-size: cover;
+  }
+  .footer-icon[data-mark="top"]::after {
     content: '\f35b';
   }
   .footer-btnList {
