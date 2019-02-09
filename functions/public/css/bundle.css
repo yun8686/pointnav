@@ -8626,29 +8626,29 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (min-width: 481px) {
-  .cassette-mark {
+  .crown-icon {
     display: inline-block;
     width: 44px;
   }
-  .cassette-mark[data-mark="gold"] {
+  .crown-icon[data-mark="gold"] {
     background: linear-gradient(110deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
   }
-  .cassette-mark[data-mark="silver"] {
+  .crown-icon[data-mark="silver"] {
     background: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
   }
-  .cassette-mark[data-mark="bronze"] {
+  .crown-icon[data-mark="bronze"] {
     background: -webkit-gradient(linear, left top, right bottom, from(#97461a), color-stop(0.3, #fbd8c5), color-stop(0.8, #6c2e16), to(#efdbcd));
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
   }
-  .cassette-mark[data-mark="other"] {
+  .crown-icon[data-mark="other"] {
     color: #aaa;
   }
-  .cassette-mark::after {
+  .crown-icon::after {
     content: '\f521';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
@@ -8680,12 +8680,37 @@ input[type=range]::-ms-thumb {
     padding: 0px !important;
     margin: 0;
   }
+  /* タイトル */
+  .card-title {
+    font-size: 24px;
+    margin: 24px auto;
+    padding-top: 24px;
+    border-bottom: 4px solid #aaa;
+    /* アイコンの設定 */
+    /* 王冠のサイズ設定 */
+  }
+  .card-title .crown-icon {
+    display: inline-block;
+    width: 44px;
+  }
+  .card-title .crown-icon::after {
+    font-size: 28px;
+  }
   /* カセット */
   .card-content {
     font-size: 16px;
+    /* アイコンの設定 */
+    /* 王冠のサイズ設定 */
   }
   .card-content p {
     padding-top: 4px;
+  }
+  .card-content .crown-icon {
+    display: inline-block;
+    width: 44px;
+  }
+  .card-content .crown-icon::after {
+    font-size: 28px;
   }
   /* 商品画像 */
   .card-image {
@@ -8696,21 +8721,6 @@ input[type=range]::-ms-thumb {
     color: #B12704;
     font-size: 24px;
     padding-top: 16px;
-  }
-  .card-pointDetail {
-    font-size: 24px;
-    margin: 24px auto;
-    padding-top: 24px;
-    border-bottom: 4px solid #aaa;
-  }
-  /* アイコンの設定 */
-  /* 王冠のサイズ設定 */
-  .cassette-mark {
-    display: inline-block;
-    width: 44px;
-  }
-  .cassette-mark::after {
-    font-size: 28px;
   }
   /* フッターボタン */
   .footer-icon::after {
@@ -8730,29 +8740,29 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (max-width: 480px) {
-  .cassette-mark {
+  .crown-icon {
     display: inline-block;
     width: 44px;
   }
-  .cassette-mark[data-mark="gold"] {
+  .crown-icon[data-mark="gold"] {
     background: linear-gradient(110deg, #F7DE05, #DA8E00, #EDAC06, #F7DE05, #ECB802, #DAAF08, #B67B03);
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
   }
-  .cassette-mark[data-mark="silver"] {
+  .crown-icon[data-mark="silver"] {
     background: linear-gradient(to top left, #A5A5A5, #BABAC2, #E8E8E8, #A5A5A5, #BABAC2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
   }
-  .cassette-mark[data-mark="bronze"] {
+  .crown-icon[data-mark="bronze"] {
     background: -webkit-gradient(linear, left top, right bottom, from(#97461a), color-stop(0.3, #fbd8c5), color-stop(0.8, #6c2e16), to(#efdbcd));
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
   }
-  .cassette-mark[data-mark="other"] {
+  .crown-icon[data-mark="other"] {
     color: #aaa;
   }
-  .cassette-mark::after {
+  .crown-icon::after {
     content: '\f521';
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
@@ -8784,9 +8794,34 @@ input[type=range]::-ms-thumb {
     padding: 0px !important;
     margin: 0;
   }
+  /* タイトル */
+  .card-title {
+    font-size: 18px;
+    margin: 16px auto;
+    padding-top: 16px;
+    border-bottom: 4px solid #aaa;
+    /* アイコンの設定 */
+    /* 王冠のサイズ設定 */
+  }
+  .card-title .crown-icon {
+    display: inline-block;
+    width: 30px;
+  }
+  .card-title .crown-icon::after {
+    font-size: 22px;
+  }
   /* カセット */
   .card-content {
     font-size: 14px;
+    /* アイコンの設定 */
+    /* 王冠のサイズ設定 */
+  }
+  .card-content .crown-icon {
+    display: inline-block;
+    width: 24px;
+  }
+  .card-content .crown-icon::after {
+    font-size: 16px;
   }
   /* 商品画像 */
   .card-image {
@@ -8795,21 +8830,6 @@ input[type=range]::-ms-thumb {
   /* ポイント */
   .card-point {
     color: #B12704;
-    font-size: 16px;
-  }
-  .card-pointDetail {
-    font-size: 16px;
-    margin: 16px auto;
-    padding-top: 16px;
-    border-bottom: 4px solid #aaa;
-  }
-  /* アイコンの設定 */
-  /* 王冠のサイズ設定 */
-  .cassette-mark {
-    display: inline-block;
-    width: 24px;
-  }
-  .cassette-mark::after {
     font-size: 16px;
   }
   /* フッターボタン */

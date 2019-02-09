@@ -13,9 +13,39 @@
     margin: 0;
   }
 
+  /* タイトル */
+  .card-title {
+    font-size: 18px;
+    margin: 16px auto;
+    padding-top: 16px;
+    border-bottom: 4px solid $c-grey;
+
+    /* アイコンの設定 */
+    /* 王冠のサイズ設定 */
+    .crown-icon {
+      display: inline-block;
+      width: 30px;
+
+      &::after {
+        font-size: 22px;
+      }
+    }
+  }
+
   /* カセット */
   .card-content {
     font-size: 14px;
+
+    /* アイコンの設定 */
+    /* 王冠のサイズ設定 */
+    .crown-icon {
+      display: inline-block;
+      width: 24px;
+
+      &::after {
+        font-size: 16px;
+      }
+    }
   }
 
   /* 商品画像 */
@@ -27,24 +57,6 @@
   .card-point {
     color: $c-red;
     font-size: 16px;
-  }
-
-  .card-pointDetail {
-    font-size: 16px;
-    margin: 16px auto;
-    padding-top: 16px;
-    border-bottom: 4px solid $c-grey;
-  }
-
-  /* アイコンの設定 */
-  /* 王冠のサイズ設定 */
-  .cassette-mark {
-    display: inline-block;
-    width: 24px;
-
-    &::after {
-      font-size: 16px;
-    }
   }
 
   /* フッターボタン */

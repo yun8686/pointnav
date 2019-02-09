@@ -7,31 +7,28 @@ block header
         span Lowsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
 block main
   ul
-    - var flag = 'test';
+    - var flag = '';
       - for(var i=0;i<self.data.length;i++)
         if self.data[i].mark == 'gold' && flag != 'gold'
-          li.card-pointDetail
-            |還元率
-            strong 35%
-            span 以上
+          li.card-title
+            span.crown-icon(data-mark=self.data[i].mark)
+            strong|還元率35%以上
           - flag = self.data[i].mark
         else if self.data[i].mark == 'silver' && flag != 'silver'
-          li.card-pointDetail
-            |還元率
-            strong 25%
-            span 以上
+          li.card-title
+            span.crown-icon(data-mark=self.data[i].mark)
+            strong|還元率25%以上
              #{flag}
           - flag = self.data[i].mark
         else if self.data[i].mark == 'bronze' && flag != 'bronze'
-          li.card-pointDetail
-            |還元率
-            strong 15%
-            span 以上
+          li.card-title
+            span.crown-icon(data-mark=self.data[i].mark)
+            strong|還元率15%以上
           - flag = self.data[i].mark
         else if self.data[i].mark == 'other' && flag != 'other'
-          li.card-pointDetail
-            |還元率
-            span 15%未満
+          li.card-title
+            span.crown-icon(data-mark=self.data[i].mark)
+            |還元率15%未満
           - flag = self.data[i].mark
         li.card.grey.lighten-5
           div.card-content.row
@@ -46,7 +43,7 @@ block main
                   span(data-priceText)| #{self.data[i].priceText}
               div.card-point
                 //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
-                span.cassette-mark(data-mark=self.data[i].mark)
+                span.crown-icon(data-mark=self.data[i].mark)
                 span(data-point)| #{self.data[i].pointText}
                   |  (
                 span(data-price,data-point)|#{self.data[i].unitRate}%
