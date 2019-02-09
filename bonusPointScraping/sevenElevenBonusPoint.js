@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
 
-(async() => {
+module.exports = async(admin) => {
     /**
-     * ファミリーマートのサイトからボーナスポイントの情報を取得して
+     * セブンイレブンのサイトからボーナスポイントの情報を取得して
      * FireBaseに保存するスクリプト
      */
     const browser = await puppeteer.launch({
@@ -12,11 +12,11 @@ const puppeteer = require('puppeteer');
         ]
     });
     const page = await browser.newPage();
-    await page.goto('http://www.family.co.jp/campaign/pointplus.html'); // 表示したいURL
+    await page.goto('http://www.sej.co.jp/i/nanaco/bonuspoints'); // 表示したいURL
     const pageData = await page.evaluate(()=>{
       var source = [];
-      document.querySelectorAll('.ly-mod-def-tbl tbody tr').forEach(v=>{
-        v.querySelectorAll("img,.ly-manufacturer,.ly-productname,.ly-amout,.ly-txt").forEach(w=>{
+      document.querySelectorAll('.nanacoBPImg').forEach(v=>{
+        v.querySelectorAll(".image img,.period,.point>strong,.condition").forEach(w=>{
           source.push(w);
         });
       });
@@ -28,22 +28,34 @@ const puppeteer = require('puppeteer');
           case 'img':
             ++itemIdx;
             items[itemIdx] = [];
-            items[itemIdx].push(source[i].src);
+            items[itemIdx].push(source[i].dataset.original);
             break;
           default:
             items[itemIdx].push(source[i].innerText);
         }
       }
+      const minPrice = (priceText)=>{
+        var matches = priceText.match(/([\d,]+)円/g);
+        var min = Number.MAX_SAFE_INTEGER;
+        if(matches)for(var i=0;i<matches.length;i++){
+          min = Math.min(min, Number(matches[i].replace(/[円,]/g,"")));
+        }
+        if(min === Number.MAX_SAFE_INTEGER) min = 0;
+        console.log("priceText", priceText);
+        console.log("min", min);
+        return min;
+      }
+
       return items.map((item)=>{
         return {
           image: item[0],
-          company: item[1],
-          itemName: item[2] + item[3],
-          price: parseInt(item[5].match(/\d+円$/)[0]),
-          priceText: item[5],
-          termText: item[6],
-          point: parseInt(item[4].match(/\d+ポイント/)[0]),
-          pointText: item[4].match(/\d+ポイント/)[0],
+          company: "",
+          itemName: item[3],
+          price: minPrice(item[3]),
+          priceText: item[3],
+          termText: item[2],
+          point: parseInt(item[1]),
+          pointText: item[1],
         };
       }).map(item=>{
         // 集計する
@@ -69,17 +81,11 @@ const puppeteer = require('puppeteer');
     /*（何か処理）*/
     browser.close();
 
-    var admin = require("firebase-admin");
-    var serviceAccount = require("./api-keys/firebase-secret.json");
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-      databaseURL: "https://lowson-8f86f.firebaseio.com"
-    });
 
     var db = admin.database();
-    var ref = db.ref("famimaBP"); //room1要素への参照
+    var ref = db.ref("sevenElevenBP"); //room1要素への参照
     ref.set(pageData);
     await ref.on("value", (data)=>{
       console.log('output', data.val());
     });
-})();
+};

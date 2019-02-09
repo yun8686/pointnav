@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-(async() => {
+module.exports = async(admin) => {
     /**
      * ローソンのサイトからボーナスポイントの情報を取得して
      * FireBaseに保存するスクリプト
@@ -69,17 +69,10 @@ const puppeteer = require('puppeteer');
     /*（何か処理）*/
     browser.close();
 
-    var admin = require("firebase-admin");
-    var serviceAccount = require("./api-keys/firebase-secret.json");
-    admin.initializeApp({
-      credential: admin.credential.cert(serviceAccount),
-      databaseURL: "https://lowson-8f86f.firebaseio.com"
-    });
-
     var db = admin.database();
     var ref = db.ref("lowsonBP2"); //room1要素への参照
     ref.set(pageData);
     await ref.on("value", (data)=>{
       console.log('output', data.val());
     });
-})();
+};

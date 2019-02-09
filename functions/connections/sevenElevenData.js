@@ -1,5 +1,5 @@
 const database = require('./firebaseDatabase')();
-const ref = database.ref("famimaBP");
+const ref = database.ref("sevenElevenBP");
 
 module.exports = (callback)=>{
 //  ref.keepSynced(false);

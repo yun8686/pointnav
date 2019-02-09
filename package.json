@@ -9,7 +9,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js",
+    "start": "node bonusPointScraping/index.js",
     "test": "test",
     "serve": "firebase serve"
   },

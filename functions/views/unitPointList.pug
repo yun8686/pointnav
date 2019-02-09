@@ -48,6 +48,9 @@ block main
                   |  (
                 span(data-price,data-point)|#{self.data[i].unitRate}%
                   | )
+              div
+                p| 税込価格：
+                  span(data-termText)| #{self.data[i].termText}
 
 block footer
   .container
