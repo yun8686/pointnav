@@ -13,12 +13,19 @@
     margin: 0;
   }
 
+  // PC用にカードを２枚並べる
+  .flex-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   /* タイトル */
   .card-title {
     font-size: 24px;
     margin: 24px auto;
     padding-top: 24px;
     border-bottom: 4px solid $c-grey;
+    width: 100%;
 
     /* アイコンの設定 */
     /* 王冠のサイズ設定 */
@@ -32,7 +39,11 @@
     }
   }
 
-  /* カセット */
+  /* カード */
+  .card {
+    width: 50%;
+  }
+  
   .card-content {
     font-size: 16px;
 
@@ -65,21 +76,15 @@
   }
 
   /* フッターボタン */
+  .fixed-action-btn {
+    &.is-sp{
+      display: none;
+    }
+  }
+
   .footer-icon::after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     font-size: 24px;
-  }
-
-  .footer-icon[data-mark="coin"]::after {
-    content: '\f51e';
-  }
-
-  .footer-icon[data-mark="yen"]::after {
-    content: '\f157';
-  }
-
-  .footer-icon[data-mark="top"]::after {
-    content: '\f35b';
   }
 }

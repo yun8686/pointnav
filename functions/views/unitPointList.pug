@@ -6,7 +6,7 @@ block header
       h2.info-text
         span Lowsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
 block main
-  ul
+  ul.flex-wrapper
     - var flag = '';
       - for(var i=0;i<self.data.length;i++)
         if self.data[i].mark == 'gold' && flag != 'gold'
@@ -53,7 +53,25 @@ block main
 
 block footer
   .container
-    .fixed-action-btn.click-to-toggle
+    //- PC用
+    .fixed-action-btn.click-to-toggle.is-pc
+        a.btn-floating.btn-large.red
+          span.footer-icon(data-mark="bars")
+        ul.footer-btnList
+          li
+            a.btn-floating(href="/lowson" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="lowson")
+          li
+            a.btn-floating.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="famima")
+          li
+            a.btn-floating.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="seven")
+          li
+            a.btn-floating(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="top")
+    //- スマホ用
+    .fixed-action-btn.click-to-toggle.is-sp
         a.btn-floating.btn-large.red
           span.footer-icon(data-mark="bars")
         ul.footer-btnList.footer-btnList__left
