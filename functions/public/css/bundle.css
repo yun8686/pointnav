@@ -8625,7 +8625,7 @@ input[type=range]::-ms-thumb {
   }
 }
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 781px) {
   .crown-icon {
     display: inline-block;
     width: 44px;
@@ -8721,6 +8721,9 @@ input[type=range]::-ms-thumb {
   .card {
     width: 50%;
   }
+  .card.card-header {
+    width: 100%;
+  }
   .card-content {
     font-size: 16px;
     /* アイコンの設定 */
@@ -8740,6 +8743,13 @@ input[type=range]::-ms-thumb {
   .card-image {
     padding: 0px !important;
   }
+  /* 商品情報の文言 */
+  .card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
   /* ポイント */
   .card-point {
     color: #B12704;
@@ -8757,7 +8767,7 @@ input[type=range]::-ms-thumb {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 780px) {
   .crown-icon {
     display: inline-block;
     width: 44px;
@@ -8866,6 +8876,13 @@ input[type=range]::-ms-thumb {
   /* 商品画像 */
   .card-image {
     padding: 0px !important;
+  }
+  /* 商品情報の文言 */
+  .card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
   }
   /* ポイント */
   .card-point {

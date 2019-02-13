@@ -1,4 +1,4 @@
-@media screen and (min-width:481px) {
+@media screen and (min-width:781px) {
   @import 'common';
 
   /* ヘッダー */
@@ -42,8 +42,12 @@
   /* カード */
   .card {
     width: 50%;
+
+    &.card-header {
+      width: 100%;
+    }
   }
-  
+
   .card-content {
     font-size: 16px;
 
@@ -68,6 +72,14 @@
     padding: 0px !important;
   }
 
+  /* 商品情報の文言 */
+  .card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
   /* ポイント */
   .card-point {
     color: $c-red;
@@ -77,7 +89,7 @@
 
   /* フッターボタン */
   .fixed-action-btn {
-    &.is-sp{
+    &.is-sp {
       display: none;
     }
   }

@@ -1,7 +1,7 @@
 extends layout
 block header
   h1.header ボーナスポイント比較ナビ
-  .card
+  .card.card-header
     .card-content
       h2.info-text
         span Lowsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
@@ -35,8 +35,8 @@ block main
               img(src=self.data[i].image)
             .card-textBox.col.s7
               div
-                p(data-campany)| #{self.data[i].campany}
-                p(data-itemName)| #{self.data[i].itemName}
+                p.card-text(data-campany)| #{self.data[i].campany}
+                p.card-text(data-itemName)| #{self.data[i].itemName}
               div
                 p| 税込価格：
                   span(data-priceText)| #{self.data[i].priceText}

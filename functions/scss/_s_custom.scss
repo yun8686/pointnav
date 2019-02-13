@@ -1,4 +1,4 @@
-@media screen and (max-width:480px) {
+@media screen and (max-width:780px) {
   @import 'common';
 
   /* ヘッダー */
@@ -64,6 +64,14 @@
     padding: 0px !important;
   }
 
+  /* 商品情報の文言 */
+  .card-text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+
   /* ポイント */
   .card-point {
     color: $c-red;
@@ -79,37 +87,38 @@
     bottom: 0 !important;
     margin: auto !important;
     justify-content: space-between;
-  
+
     .footer-icon {
       position: absolute;
       right: 0%;
     }
-  
+
     &__rigth {
       right: auto !important;
       left: 150% !important;
       flex-direction: row-reverse;
     }
-  
-    &__left{
+
+    &__left {
       right: 150% !important;
       left: auto !important;
     }
   }
 
   /* フッターボタン */
-  .fixed-action-btn{
-    width:56px;
+  .fixed-action-btn {
+    width: 56px;
     position: absolute;
     right: 0;
     left: 0;
     margin: auto;
     padding: 0;
 
-    &.is-pc{
+    &.is-pc {
       display: none;
     }
   }
+
   .footer-icon::after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
