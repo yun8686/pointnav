@@ -86,6 +86,6 @@ module.exports = async(admin) => {
     var ref = db.ref("sevenElevenBP"); //room1要素への参照
     ref.set(pageData);
     await ref.on("value", (data)=>{
-      console.log('output', data.val());
+      //console.log('output', data.val());
     });
 };

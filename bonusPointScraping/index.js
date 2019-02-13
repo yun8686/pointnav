@@ -5,6 +5,10 @@ admin.initializeApp({
   databaseURL: "https://lowson-8f86f.firebaseio.com"
 });
 
-require('./famimaBonusPoint')(admin);
-require('./lowsonBonusPoint')(admin);
-require('./sevenElevenBonusPoint')(admin);
+(async()=>{
+  Promise.all([await require('./famimaBonusPoint')(admin),
+  await require('./lowsonBonusPoint')(admin),
+  await require('./sevenElevenBonusPoint')(admin)]).then(()=>{
+    process.exit();
+  })
+})();
