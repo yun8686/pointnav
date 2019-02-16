@@ -8659,7 +8659,7 @@ input[type=range]::-ms-thumb {
     position: relative;
   }
   .page-footer {
-    height: 60px;
+    height: 50px;
     padding-top: 0;
   }
   .footer-icon {
@@ -8686,9 +8686,34 @@ input[type=range]::-ms-thumb {
   .footer-icon[data-mark="top"]::after {
     content: '\f35b';
   }
+  .icon-Accordion {
+    position: relative;
+  }
+  .icon-Accordion::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 16px;
+    position: absolute;
+    color: #aaa;
+    bottom: 0;
+    right: -4px;
+  }
   /* ヘッダー */
   .header {
     font-size: 24px;
+    position: relative;
+  }
+  .header-icon {
+    position: absolute;
+    width: 40px;
+    top: 0;
+    bottom: 10px;
+    left: 0;
+    margin: auto;
+  }
+  .header-title {
+    padding-left: 50px;
   }
   /* 説明文 */
   .info-text {
@@ -8737,7 +8762,7 @@ input[type=range]::-ms-thumb {
     width: 44px;
   }
   .card-content .crown-icon::after {
-    font-size: 28px;
+    font-size: 24px;
   }
   /* 商品画像 */
   .card-image {
@@ -8750,11 +8775,14 @@ input[type=range]::-ms-thumb {
     -webkit-line-clamp: 3;
     overflow: hidden;
   }
+  .card-text.is-active {
+    -webkit-line-clamp: inherit;
+  }
   /* ポイント */
   .card-point {
     color: #B12704;
-    font-size: 24px;
-    padding-top: 16px;
+    font-size: 20px;
+    padding-top: 8px;
   }
   /* フッターボタン */
   .fixed-action-btn.is-sp {
@@ -8801,7 +8829,7 @@ input[type=range]::-ms-thumb {
     position: relative;
   }
   .page-footer {
-    height: 60px;
+    height: 50px;
     padding-top: 0;
   }
   .footer-icon {
@@ -8828,9 +8856,34 @@ input[type=range]::-ms-thumb {
   .footer-icon[data-mark="top"]::after {
     content: '\f35b';
   }
+  .icon-Accordion {
+    position: relative;
+  }
+  .icon-Accordion::after {
+    content: '\f107';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 16px;
+    position: absolute;
+    color: #aaa;
+    bottom: 0;
+    right: -4px;
+  }
   /* ヘッダー */
   .header {
     font-size: 20px;
+    position: relative;
+  }
+  .header-icon {
+    position: absolute;
+    width: 40px;
+    top: 0;
+    bottom: 10px;
+    left: 0;
+    margin: auto;
+  }
+  .header-title {
+    padding-left: 50px;
   }
   /* 説明文 */
   .info-text {
@@ -8884,12 +8937,18 @@ input[type=range]::-ms-thumb {
     -webkit-line-clamp: 3;
     overflow: hidden;
   }
+  .card-text.is-active {
+    -webkit-line-clamp: inherit;
+  }
   /* ポイント */
   .card-point {
     color: #B12704;
     font-size: 16px;
   }
   /* フッター */
+  footer {
+    height: 50px !important;
+  }
   .footer-btnList {
     display: flex;
     width: 96px;

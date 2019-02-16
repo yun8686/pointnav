@@ -93,10 +93,10 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! materialize-css */ "./node_modules/materialize-css/dist/js/materialize.js");
+/* WEBPACK VAR INJECTION */(function(jQuery, $) {__webpack_require__(/*! materialize-css */ "./node_modules/materialize-css/dist/js/materialize.js");
 
 // フッターメニューのアニメーション(PC)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.fixed-action-btn.is-pc');
   var instances = M.FloatingActionButton.init(elems, {
     direction: 'left',
@@ -105,12 +105,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // フッターメニューのアニメーション(スマホ)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.fixed-action-btn.is-sp');
   var instances = M.FloatingActionButton.init(elems, {
     hoverEnabled: false
   });
 });
+
+
+jQuery(document).ready(function () {
+  $('.js-clickCard').on('click', function () {
+    $(this).find('.js-textAccordion').toggleClass('is-active');
+  });
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

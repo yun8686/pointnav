@@ -1,11 +1,14 @@
 extends layout
 block header
-  h1.header ボーナスポイント比較ナビ
-  .card.card-header
-    .card-content
-      h2.info-text
-        span Lowsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
+  h1.header 
+    img.header-icon(src="/image/favicon.png")
+    span.header-title ボーナスポイント比較ナビ
+
 block main
+  .card.card-header
+      .card-content
+        h2.info-text
+          span Lawsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
   ul.flex-wrapper
     - var flag = '';
       - for(var i=0;i<self.data.length;i++)
@@ -29,14 +32,14 @@ block main
             span.crown-icon(data-mark=self.data[i].mark)
             |還元率15%未満
           - flag = self.data[i].mark
-        li.card.grey.lighten-5
+        li.card.grey.lighten-5.js-clickCard
           div.card-content.row
             .circle.card-image.col.s5
               img(src=self.data[i].image)
             .card-textBox.col.s7
               div
-                p.card-text(data-campany)| #{self.data[i].campany}
-                p.card-text(data-itemName)| #{self.data[i].itemName}
+                p.card-text(data-company)| #{self.data[i].company}
+                p.card-text.js-textAccordion(data-itemName)| !{self.data[i].itemName}
               div
                 p| 税込価格：
                   span(data-priceText)| #{self.data[i].priceText}
@@ -49,7 +52,7 @@ block main
                   | )
               div
                 p|
-                  span(data-termText)| #{self.data[i].termText}
+                  span.js-dateText(data-termText)| #{self.data[i].termText}
 
 block footer
   .container
@@ -59,8 +62,8 @@ block footer
           span.footer-icon(data-mark="bars")
         ul.footer-btnList
           li
-            a.btn-floating(href="/lowson" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
-              span.footer-icon(data-mark="lowson")
+            a.btn-floating(href="/lawson" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="lawson")
           li
             a.btn-floating.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="famima")
@@ -76,15 +79,15 @@ block footer
           span.footer-icon(data-mark="bars")
         ul.footer-btnList.footer-btnList__left
           li
-            a.btn-floating(href="/lowson" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
-              span.footer-icon(data-mark="lowson")
+            a.btn-floating(href="/lawson" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+              span.footer-icon(data-mark="lawson")
           li
-            a.btn-floating.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.darken-1(href="/famima" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="famima")
         ul.footer-btnList.footer-btnList__rigth
           li
             a.btn-floating(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="top")
           li
-            a.btn-floating.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.darken-1(href="/sevenEleven" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="seven")
