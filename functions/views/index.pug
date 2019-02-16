@@ -1,44 +1,19 @@
 extends layout
 block header
-  h1.f-20| サイトのタイトルを入れる
-  .card
-    .card-content.padding-12
-      h2.f-14.margin-none| このサイトはローソンポイントが貯まる商品を一覧にまとめています。
-
+  h1.header ボーナスポイント比較ナビ
+  .card.card-header
+    .card-content
+      h2.info-text
+        span コンビニのボーナスポイントの還元率を高い順にリストアップするサイトです
 block main
-  ul
-  - for(var　i　=　0;　i<self.data.length;i++)
-    li.card.grey.lighten-5
-      div.card-content.row.padding-12
-        .circle.card-image.col.s4.padding-none
-          img(src="https://www.lawson.co.jp/ponta/tameru/bonus/img/bp_181101_122.png")
-        .col.s8
-          div
-            p.f-14(data-campany)= self.data.campany
-            p.f-14(data-itemName)| ユリアージュ　ウォーターハンドクリーム
-          div
-            p.f-14(data-priceText)| 本体価格：990円(税込1,069円)
-          div.f-16.f-red
-            //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
-            span.cassette-mark(data-mark="other")
-            span(data-point)| 100P
-              | (
-            span(data-price,data-point)| 10.69
-              | )
-
+  .row
+    center.col.s4
+      a.btn-floating(href="/lowson")
+        span.footer-icon(data-mark="lowson")
+    center.col.s4
+      a.btn-floating(href="/famima")
+        span.footer-icon(data-mark="famima")
+    center.col.s4
+      a.btn-floating(href="/seven")
+        span.footer-icon(data-mark="seven")
 block footer
-  .container
-    ul.container.row
-      li.row.col.s4
-        span.waves-effect.waves-light.btn-large.red.lighten-3
-          span.footer-icon(data-mark="coin")
-      li.row.col.s4
-        span.waves-effect.waves-light.btn-large.red.lighten-3
-          span.footer-icon(data-mark="yen")
-      li.row.col.s4
-        span.waves-effect.waves-light.btn-large.red.lighten-3
-          span.footer-icon(data-mark="top")
-        
-  .footer-copyright
-    .container| © 2014 Copyright Text
-    a.grey-text.text-lighten-4.right| More Links

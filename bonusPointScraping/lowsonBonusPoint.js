@@ -18,28 +18,38 @@ module.exports = async(admin) => {
     keylog = console.log;
     const pageData = await page.evaluate(()=>{
       console.log("page");
+      // HTMLエスケープ
+      var escapeHTML = (str)=>str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+
       var source = document.querySelectorAll('#sec-02 .rightBlock p,dd,#sec-02 img,.note font');
       var items = [];
       var itemIdx = -1;
+      var withitemFlg = false;  // 一緒に買うとボーナスポイントフラグ
       for(var i=0;i<source.length;i++){
         switch(source[i].tagName.toLowerCase()){
           case 'img':
             ++itemIdx;
             items[itemIdx] = [];
             items[itemIdx].push(source[i].src);
+            withitemFlg = false;
             break;
           default:
+            if(source[i].innerText == "一緒に買うとボーナスポイント") withitemFlg = true;
+
             if(source[i].innerHTML.indexOf('税込') >= 0){
-              var text = source[i].innerHTML.match(/\(税込[\d,]+円\)/);
+              if(withitemFlg){
+                items[itemIdx].push(source[i].innerHTML);
+              }
+              var text = source[i].innerHTML.match(/\(税込 ?各?[\d,]+円\)/);
               if(text){
-                items[itemIdx].push(text[0].replace(/[\(\)税込]/g, ""));
+                items[itemIdx].push(text[0].replace(/[\(\)税込各 ]/g, ""));
               }
             }else{
               items[itemIdx].push(source[i].innerText);
             }
         }
       }
-      return items.map((item)=>{
+      var retItems = items.map((item)=>{
         if(item.length == 6){
           return {
             image: item[0],
@@ -51,7 +61,15 @@ module.exports = async(admin) => {
           };
         }else if(item.length >= 7){
           if(item[1] == "一緒に買うとボーナスポイント"){
-            return null;
+            return {
+              withitemFlg: true,
+              image: item[0],
+              company: item[2],
+              itemName: escapeHTML(item[3]) + "<br>" + escapeHTML(item[5]),
+              priceText: item[4] + "+" + item[6],
+              termText: item[7],
+              pointText: item[8],
+            };
           }
           if(item[2] == "デカビタC"){
             return null;
@@ -70,13 +88,19 @@ module.exports = async(admin) => {
         }
       }).filter(v=>v).map(item=>{
         // 集計する
-        item.point = parseInt(item.pointText);
-        item.price = Number(item.priceText.match(/([\d,]+)/)[1].replace(/,/g,""));
-        item.unitRate = item.point/item.price;
-        item.unitRate = Math.round(item.unitRate * 1000)/10;
-
-        item.termStart = new Date((new Date()).getFullYear()+"/" + item.termText.split("～")[0].replace(/^(\d+)月(\d+).*$/, "$1/$2"))-0;
-        item.termEnd = new Date((new Date()).getFullYear()+"/" + item.termText.split("～")[1].replace(/^(\d+)月(\d+).*$/, "$1/$2"))-0;
+        if(item.withitemFlg){
+          item.point = parseInt(item.pointText);
+          item.price = Number(item.priceText.match(/([\d,]+)/g)[0]) + Number(item.priceText.match(/([\d,]+)/g)[1]);
+          item.unitRate = item.point/item.price;
+          item.unitRate = Math.round(item.unitRate * 1000)/10;
+        }else{
+          item.point = parseInt(item.pointText);
+          item.price = Number(item.priceText.match(/([\d,]+)/)[1].replace(/,/g,""));
+          item.unitRate = item.point/item.price;
+          item.unitRate = Math.round(item.unitRate * 1000)/10;
+          item.termStart = new Date((new Date()).getFullYear()+"/" + item.termText.split("～")[0].replace(/^(\d+)月(\d+).*$/, "$1/$2"))-0;
+          item.termEnd = new Date((new Date()).getFullYear()+"/" + item.termText.split("～")[1].replace(/^(\d+)月(\d+).*$/, "$1/$2"))-0;
+        }
         return item;
       })
       .map(item=>{
@@ -87,6 +111,7 @@ module.exports = async(admin) => {
         else item.mark = "other";
         return item;
       }).sort((a,b)=>b.unitRate-a.unitRate);
+      return retItems;
     });
     /*（何か処理）*/
     console.log("pageData", pageData)

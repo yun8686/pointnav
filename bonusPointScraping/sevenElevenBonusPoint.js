@@ -50,9 +50,9 @@ module.exports = async(admin) => {
         return {
           image: item[0],
           company: "",
-          itemName: item[3],
+          itemName: item[3].split("◆").join("<br>◆").trim(),
           price: minPrice(item[3]),
-          priceText: item[3],
+          priceText: new Intl.NumberFormat().format(minPrice(item[3])) + "円",
           termText: item[2],
           point: parseInt(item[1]),
           pointText: item[1],
