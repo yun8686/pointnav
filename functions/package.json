@@ -7,7 +7,7 @@
     "serve": "cd .. && firebase serve",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
-    "deploy": "firebase deploy --only functions",
+    "deploy": "webpack --mode production && firebase deploy --only functions",
     "logs": "firebase functions:log",
     "webpack": "webpack"
   },

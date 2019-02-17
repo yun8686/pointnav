@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     console.log("data", data);
     res.render('unitPointList', {
       self: true,
-      title: 'Node.js Test',
+      title: 'ファミリーマート - ボーナスポイント比較ナビ -',
       data: data,
     });
   });

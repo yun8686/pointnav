@@ -67,7 +67,7 @@ module.exports = async(admin) => {
               withitemFlg: true,
               image: item[0],
               company: item[2],
-              itemName: escapeHTML(item[3]).replace("\+$", "<br>+") + "<br>" + escapeHTML(item[5]),
+              itemName: escapeHTML(item[3]).replace(/\+$/, "<br>+") + "<br>" + escapeHTML(item[5]),
               priceText: item[4] + "+" + item[6],
               termText: item[7],
               termOption: "",

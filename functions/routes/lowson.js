@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     console.log("lowsonData", lowsonData);
     res.render('unitPointList', {
       self: true,
-      title: 'Node.js Test',
+      title: 'ローソン - ボーナスポイント比較ナビ -',
       data: lowsonData,
     });
   });
