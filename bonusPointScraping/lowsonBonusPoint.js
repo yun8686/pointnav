@@ -52,11 +52,13 @@ module.exports = async(admin) => {
       var retItems = items.map((item)=>{
         if(item.length == 6){
           return {
+            withitemFlg: false,
             image: item[0],
             company: item[1],
             itemName: item[2],
             priceText: item[3],
             termText: item[4],
+            termOption: "",
             pointText: item[5],
           };
         }else if(item.length >= 7){
@@ -65,9 +67,10 @@ module.exports = async(admin) => {
               withitemFlg: true,
               image: item[0],
               company: item[2],
-              itemName: escapeHTML(item[3]) + "<br>" + escapeHTML(item[5]),
+              itemName: escapeHTML(item[3]).replace("\+$", "<br>+") + "<br>" + escapeHTML(item[5]),
               priceText: item[4] + "+" + item[6],
               termText: item[7],
+              termOption: "",
               pointText: item[8],
             };
           }
@@ -76,11 +79,14 @@ module.exports = async(admin) => {
           }
           if(item[1] == "※夕夜間限定16:00～21:59"){
             return {
+              withitemFlg: false,
+              nightFlg: true,
               image: item[0],
               company: item[2],
               itemName: item[3],
               priceText: item[4],
-              termText: item[5] + "\n" + item[1],
+              termText: escapeHTML(item[5]),
+              termOption: escapeHTML(item[1]),
               pointText: item[6],
             };
             throw JSON.stringify(item);

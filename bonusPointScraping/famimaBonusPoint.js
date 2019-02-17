@@ -39,10 +39,10 @@ module.exports = async(admin) => {
           image: item[0],
           company: item[1],
           itemName: item[2] + item[3],
-          price: parseInt(item[5].match(/[\d,]+円$/)[0]),
+          price: parseInt(item[5].match(/[\d,]+円/)[0].replace(",","")),
           priceText: item[5],
           termText: item[6],
-          point: parseInt(item[4].match(/[\d,]+ポイント/)[0]),
+          point: parseInt(item[4].match(/[\d,]+ポイント/)[0].replace(",","")),
           pointText: item[4].match(/[\d,]+ポイント/)[0],
         };
       }).map(item=>{
