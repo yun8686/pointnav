@@ -1,5 +1,6 @@
 @media screen and (max-width:780px) {
   @import 'common';
+  @import 'animation';
 
   /* ヘッダー */
   .header {
@@ -94,6 +95,10 @@
     font-size: 16px;
   }
 
+  .card-price {
+    padding-top: 4px;
+  }
+
   /* フッター */
   footer {
     height: 50px !important;
@@ -101,10 +106,9 @@
 
   .footer-btnList {
     display: flex;
-    width: 96px;
+    width: 126px;
     height: 40px;
     top: 0;
-    bottom: 0 !important;
     margin: auto !important;
     justify-content: space-between;
 
@@ -115,12 +119,12 @@
 
     &__rigth {
       right: auto !important;
-      left: 150% !important;
+      left: 120% !important;
       flex-direction: row-reverse;
     }
 
     &__left {
-      right: 150% !important;
+      right: 120% !important;
       left: auto !important;
     }
   }

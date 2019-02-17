@@ -43,6 +43,11 @@ block main
               div
                 p| 税込価格：
                   span(data-priceText)| #{self.data[i].priceText}
+              if self.data[i].withitemFlg == true
+                .withItem-label
+                  |一緒に買うと
+                  br
+                  |ボーナスポイント
               div.card-point
                 //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
                 span.crown-icon(data-mark=self.data[i].mark)

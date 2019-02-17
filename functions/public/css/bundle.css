@@ -8626,6 +8626,20 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (min-width: 781px) {
+  .card {
+    background-color: #FFF;
+  }
+  .withItem-label {
+    width: 100%;
+    background-color: #ee6e73;
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    border-radius: 2px;
+    line-height: 1.5;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
   .crown-icon {
     display: inline-block;
     width: 44px;
@@ -8658,6 +8672,10 @@ input[type=range]::-ms-thumb {
     height: 100%;
     position: relative;
   }
+  footer .btn-floating {
+    width: 56px;
+    height: 56px;
+  }
   .page-footer {
     height: 50px;
     padding-top: 0;
@@ -8671,8 +8689,8 @@ input[type=range]::-ms-thumb {
   .footer-icon[data-mark="bars"]::after {
     content: '\f0c9';
   }
-  .footer-icon[data-mark="lowson"] {
-    background-image: url("/image/lowson.png");
+  .footer-icon[data-mark="lawson"] {
+    background-image: url("/image/lawson.png");
     background-size: cover;
   }
   .footer-icon[data-mark="famima"] {
@@ -8698,6 +8716,18 @@ input[type=range]::-ms-thumb {
     color: #aaa;
     bottom: 0;
     right: -4px;
+  }
+  .animetion-down-fotterBtn {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    bottom: 0;
+  }
+  .animetion-up-fotterBtn {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    bottom: auto;
   }
   /* ヘッダー */
   .header {
@@ -8796,6 +8826,20 @@ input[type=range]::-ms-thumb {
 }
 
 @media screen and (max-width: 780px) {
+  .card {
+    background-color: #FFF;
+  }
+  .withItem-label {
+    width: 100%;
+    background-color: #ee6e73;
+    text-align: center;
+    color: #FFF;
+    font-size: 12px;
+    border-radius: 2px;
+    line-height: 1.5;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
   .crown-icon {
     display: inline-block;
     width: 44px;
@@ -8828,6 +8872,10 @@ input[type=range]::-ms-thumb {
     height: 100%;
     position: relative;
   }
+  footer .btn-floating {
+    width: 56px;
+    height: 56px;
+  }
   .page-footer {
     height: 50px;
     padding-top: 0;
@@ -8841,8 +8889,8 @@ input[type=range]::-ms-thumb {
   .footer-icon[data-mark="bars"]::after {
     content: '\f0c9';
   }
-  .footer-icon[data-mark="lowson"] {
-    background-image: url("/image/lowson.png");
+  .footer-icon[data-mark="lawson"] {
+    background-image: url("/image/lawson.png");
     background-size: cover;
   }
   .footer-icon[data-mark="famima"] {
@@ -8868,6 +8916,18 @@ input[type=range]::-ms-thumb {
     color: #aaa;
     bottom: 0;
     right: -4px;
+  }
+  .animetion-down-fotterBtn {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    bottom: 0;
+  }
+  .animetion-up-fotterBtn {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    bottom: auto;
   }
   /* ヘッダー */
   .header {
@@ -8945,16 +9005,18 @@ input[type=range]::-ms-thumb {
     color: #B12704;
     font-size: 16px;
   }
+  .card-price {
+    padding-top: 4px;
+  }
   /* フッター */
   footer {
     height: 50px !important;
   }
   .footer-btnList {
     display: flex;
-    width: 96px;
+    width: 126px;
     height: 40px;
     top: 0;
-    bottom: 0 !important;
     margin: auto !important;
     justify-content: space-between;
   }
@@ -8964,11 +9026,11 @@ input[type=range]::-ms-thumb {
   }
   .footer-btnList__rigth {
     right: auto !important;
-    left: 150% !important;
+    left: 120% !important;
     flex-direction: row-reverse;
   }
   .footer-btnList__left {
-    right: 150% !important;
+    right: 120% !important;
     left: auto !important;
   }
   /* フッターボタン */

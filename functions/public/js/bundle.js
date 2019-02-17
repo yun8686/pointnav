@@ -112,12 +112,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
 jQuery(document).ready(function () {
+  // [SP]フッターのアイコン対応
+  var $fotterBtnSp = $('.fixed-action-btn.is-sp');
+  $fotterBtnSp.on('click', function() {
+    $(this).toggleClass('animetion-down-fotterBtn');
+  });
+
+  // カードを押したときに文字を全て表示させる
   $('.js-clickCard').on('click', function () {
     $(this).find('.js-textAccordion').toggleClass('is-active');
   });
 });
+
+
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
