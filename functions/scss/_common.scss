@@ -2,6 +2,25 @@
 $c-red:#B12704;
 $c-white: #FFF;
 $c-grey: #aaa;
+$c-pink: #ee6e73;
+
+// カードの色
+.card {
+  background-color: $c-white;
+}
+
+//
+.withItem-label {
+  width: 100%;
+  background-color: $c-pink;
+  text-align: center;
+  color: $c-white;
+  font-size: 12px;
+  border-radius: 2px;
+  line-height: 1.5;
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
 
 // 王冠のアイコン
 .crown-icon {
@@ -40,12 +59,18 @@ $c-grey: #aaa;
 
 // フッター
 footer {
-  .container{
+  .container {
     height: 100%;
     position: relative;
   }
+
+  .btn-floating {
+    width: 56px;
+    height: 56px;
+  }
 }
-.page-footer{
+
+.page-footer {
   height: 50px;
   padding-top: 0;
 }
@@ -61,8 +86,8 @@ footer {
     content: '\f0c9';
   }
 
-  &[data-mark="lowson"] {
-    background-image: url("/image/lowson.png");
+  &[data-mark="lawson"] {
+    background-image: url("/image/lawson.png");
     background-size: cover;
   }
 
@@ -84,6 +109,7 @@ footer {
 // アコーディオンのアイコン
 .icon-Accordion {
   position: relative;
+
   &::after {
     content: '\f107';
     font-family: 'Font Awesome 5 Free';

@@ -1,0 +1,14 @@
+// フッターボタンのアニメーション
+.animetion-down-fotterBtn{
+  -webkit-transition: all 200ms 0s ease;
+  transition: all 200ms 0s ease;
+  transition-timing-function: ease-in;
+  bottom: 0;
+}
+
+.animetion-up-fotterBtn{
+  -webkit-transition: all 200ms 0s ease;
+  transition: all 200ms 0s ease;
+  transition-timing-function: ease-in;
+  bottom: auto;
+}
