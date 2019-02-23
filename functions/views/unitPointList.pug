@@ -62,8 +62,8 @@ block main
 block footer
   .container
     //- PC用
-    .fixed-action-btn.click-to-toggle.is-pc
-        a.btn-floating.btn-large.red
+    .fixed-action-btn.click-to-toggle.js-footer-btn.is-pc
+        a.btn-floating.btn-large.red.js-footer-btn
           span.footer-icon(data-mark="bars")
         ul.footer-btnList
           li
@@ -76,10 +76,10 @@ block footer
             a.btn-floating.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="seven")
           li
-            a.btn-floating(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.js-top(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="top")
     //- スマホ用
-    .fixed-action-btn.click-to-toggle.is-sp
+    .fixed-action-btn.click-to-toggle.js-footer-btn.is-sp
         a.btn-floating.btn-large.red
           span.footer-icon(data-mark="bars")
         ul.footer-btnList.footer-btnList__left
@@ -91,7 +91,7 @@ block footer
               span.footer-icon(data-mark="famima")
         ul.footer-btnList.footer-btnList__rigth
           li
-            a.btn-floating(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.js-top(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="top")
           li
             a.btn-floating.darken-1(href="/sevenEleven" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')

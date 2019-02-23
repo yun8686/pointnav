@@ -8701,8 +8701,17 @@ input[type=range]::-ms-thumb {
     background-image: url("/image/seven.png");
     background-size: cover;
   }
-  .footer-icon[data-mark="top"]::after {
-    content: '\f35b';
+  .footer-icon[data-mark="top"] {
+    background-image: url("/image/top_back.png");
+    background-size: contain;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .icon-Accordion {
     position: relative;
@@ -8717,17 +8726,41 @@ input[type=range]::-ms-thumb {
     bottom: 0;
     right: -4px;
   }
+  .animetion-up-fotterBtn {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    bottom: 23px;
+  }
+  .animetion-up-fotterBtn .btn-floating.btn-large {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+    display: block;
+  }
   .animetion-down-fotterBtn {
     -webkit-transition: all 200ms 0s ease;
     transition: all 200ms 0s ease;
     transition-timing-function: ease-in;
     bottom: 0;
   }
-  .animetion-up-fotterBtn {
+  .animetion-down-fotterBtn .btn-floating.btn-large {
     -webkit-transition: all 200ms 0s ease;
     transition: all 200ms 0s ease;
     transition-timing-function: ease-in;
-    bottom: auto;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+    display: block;
+  }
+  .animetion-down-fotterBtn .btn-large {
+    line-height: 36px;
+  }
+  .animetion-down-fotterBtn .footer-icon::after {
+    font-size: 16px;
   }
   /* ヘッダー */
   .header {
@@ -8901,8 +8934,17 @@ input[type=range]::-ms-thumb {
     background-image: url("/image/seven.png");
     background-size: cover;
   }
-  .footer-icon[data-mark="top"]::after {
-    content: '\f35b';
+  .footer-icon[data-mark="top"] {
+    background-image: url("/image/top_back.png");
+    background-size: contain;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
   .icon-Accordion {
     position: relative;
@@ -8917,17 +8959,41 @@ input[type=range]::-ms-thumb {
     bottom: 0;
     right: -4px;
   }
+  .animetion-up-fotterBtn {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    bottom: 23px;
+  }
+  .animetion-up-fotterBtn .btn-floating.btn-large {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+    display: block;
+  }
   .animetion-down-fotterBtn {
     -webkit-transition: all 200ms 0s ease;
     transition: all 200ms 0s ease;
     transition-timing-function: ease-in;
     bottom: 0;
   }
-  .animetion-up-fotterBtn {
+  .animetion-down-fotterBtn .btn-floating.btn-large {
     -webkit-transition: all 200ms 0s ease;
     transition: all 200ms 0s ease;
     transition-timing-function: ease-in;
-    bottom: auto;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+    display: block;
+  }
+  .animetion-down-fotterBtn .btn-large {
+    line-height: 36px;
+  }
+  .animetion-down-fotterBtn .footer-icon::after {
+    font-size: 16px;
   }
   /* ヘッダー */
   .header {
@@ -9026,11 +9092,11 @@ input[type=range]::-ms-thumb {
   }
   .footer-btnList__rigth {
     right: auto !important;
-    left: 120% !important;
+    left: 110% !important;
     flex-direction: row-reverse;
   }
   .footer-btnList__left {
-    right: 120% !important;
+    right: 110% !important;
     left: auto !important;
   }
   /* フッターボタン */

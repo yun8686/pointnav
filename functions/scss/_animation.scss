@@ -1,14 +1,42 @@
 // フッターボタンのアニメーション
-.animetion-down-fotterBtn{
+.animetion-up-fotterBtn {
+  -webkit-transition: all 200ms 0s ease;
+  transition: all 200ms 0s ease;
+  transition-timing-function: ease-in;
+  bottom: 23px;
+
+  .btn-floating.btn-large {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.animetion-down-fotterBtn {
   -webkit-transition: all 200ms 0s ease;
   transition: all 200ms 0s ease;
   transition-timing-function: ease-in;
   bottom: 0;
-}
 
-.animetion-up-fotterBtn{
-  -webkit-transition: all 200ms 0s ease;
-  transition: all 200ms 0s ease;
-  transition-timing-function: ease-in;
-  bottom: auto;
+  .btn-floating.btn-large {
+    -webkit-transition: all 200ms 0s ease;
+    transition: all 200ms 0s ease;
+    transition-timing-function: ease-in;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .btn-large {
+    line-height: 36px;
+  }
+
+  .footer-icon::after {
+    font-size: 16px;
+  }
 }

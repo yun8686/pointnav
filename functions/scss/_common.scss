@@ -101,8 +101,17 @@ footer {
     background-size: cover;
   }
 
-  &[data-mark="top"]::after {
-    content: '\f35b';
+  &[data-mark="top"] {
+    background-image: url("/image/top_back.png");
+    background-size: contain;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    margin: auto;
   }
 }
 
