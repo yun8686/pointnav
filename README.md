@@ -39,3 +39,6 @@ Success! Logged in as メールアドレス
 
 firebase更新方法
 >npm run deploy
+
+コンパイルするとき
+>npm run webpack
