@@ -47,18 +47,16 @@
 
   /* カードの余白部分 */
   .card {
+    // カードの中身
     .card-content {
       padding: 12px 8px;
+      font-size: 14px;
+      background-color: $c-white;
     }
 
     .card-textBox {
       padding-right: 0;
     }
-  }
-
-  // カードの中身
-  .card-content {
-    font-size: 14px;
 
     /* アイコンの設定 */
     /* 王冠のサイズ設定 */

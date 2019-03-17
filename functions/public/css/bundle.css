@@ -8814,6 +8814,7 @@ input[type=range]::-ms-thumb {
   }
   .card-content {
     font-size: 16px;
+    background-color: #FFF;
     /* アイコンの設定 */
     /* 王冠のサイズ設定 */
   }
@@ -9034,22 +9035,23 @@ input[type=range]::-ms-thumb {
     font-size: 22px;
   }
   /* カードの余白部分 */
+  .card {
+    /* アイコンの設定 */
+    /* 王冠のサイズ設定 */
+  }
   .card .card-content {
     padding: 12px 8px;
+    font-size: 14px;
+    background-color: #FFF;
   }
   .card .card-textBox {
     padding-right: 0;
   }
-  .card-content {
-    font-size: 14px;
-    /* アイコンの設定 */
-    /* 王冠のサイズ設定 */
-  }
-  .card-content .crown-icon {
+  .card .crown-icon {
     display: inline-block;
     width: 24px;
   }
-  .card-content .crown-icon::after {
+  .card .crown-icon::after {
     font-size: 16px;
   }
   /* 商品画像 */
