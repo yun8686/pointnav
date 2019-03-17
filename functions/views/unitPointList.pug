@@ -8,7 +8,7 @@ block main
   .card.card-header
       .card-content
         h2.info-text
-          span| !{info_text}
+          span| !{self.info_text}
   ul.flex-wrapper
     - var flag = '', LabelMap = {gold: "還元率35%以上", silver: "還元率25%以上", bronze:"還元率15%以上", other:"還元率15%未満"};
       - for(var i=0;i<self.data.length;i++)
@@ -17,7 +17,7 @@ block main
           li.card-title
             span.crown-icon(data-mark=self.data[i].mark)
             strong|#{LabelMap[flag]}
-        li.card.grey.lighten-5.js-clickCard
+        li.card.lighten-5.js-clickCard
           div.card-content.row
             .circle.card-image.col.s5
               img(src=self.data[i].image)
