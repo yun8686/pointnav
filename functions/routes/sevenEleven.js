@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
     res.render('unitPointList', {
       self: true,
       title: 'セブンイレブン - ボーナスポイント比較ナビ -',
+      info_text: "セブンイレブンで獲得できるボーナスポイントを還元率順に並べて表示しています。",
       data: data,
     });
   });

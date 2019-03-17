@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
     res.render('unitPointList', {
       self: true,
       title: 'ファミリーマート - ボーナスポイント比較ナビ -',
+      info_text: "ファミリーマートで獲得できるボーナスポイントを還元率順に並べて表示しています。",
       data: data,
     });
   });

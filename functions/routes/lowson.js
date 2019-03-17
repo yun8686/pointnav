@@ -11,6 +11,10 @@ router.get('/', function(req, res, next) {
     res.render('unitPointList', {
       self: true,
       title: 'ローソン - ボーナスポイント比較ナビ -',
+      info_text:
+          "Lawsonで獲得できるボーナスポイントを還元率順に並べて表示しています。" + "<br>" +
+          "複数商品を同時に表示している場合は、最安の組合せパターンで計算しています。" + "<br>" +
+          "データ取得元： <a href='https://www.lawson.co.jp/ponta/tameru/bonus/index.html'>https://www.lawson.co.jp/ponta/tameru/bonus/index.html</a>",
       data: lowsonData,
     });
   });

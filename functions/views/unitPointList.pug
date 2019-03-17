@@ -1,6 +1,6 @@
 extends layout
 block header
-  h1.header 
+  h1.header
     img.header-icon(src="/image/favicon.png")
     span.header-title ボーナスポイント比較ナビ
 
@@ -8,46 +8,29 @@ block main
   .card.card-header
       .card-content
         h2.info-text
-          span Lawsonで獲得できるボーナスポイントを還元率順に並べて表示しています。
+          span| !{info_text}
   ul.flex-wrapper
-    - var flag = '';
+    - var flag = '', LabelMap = {gold: "還元率35%以上", silver: "還元率25%以上", bronze:"還元率15%以上", other:"還元率15%未満"};
       - for(var i=0;i<self.data.length;i++)
-        if self.data[i].mark == 'gold' && flag != 'gold'
+        if self.data[i].mark != flag
+          - flag = self.data[i].mark
           li.card-title
             span.crown-icon(data-mark=self.data[i].mark)
-            strong|還元率35%以上
-          - flag = self.data[i].mark
-        else if self.data[i].mark == 'silver' && flag != 'silver'
-          li.card-title
-            span.crown-icon(data-mark=self.data[i].mark)
-            strong|還元率25%以上
-          - flag = self.data[i].mark
-        else if self.data[i].mark == 'bronze' && flag != 'bronze'
-          li.card-title
-            span.crown-icon(data-mark=self.data[i].mark)
-            strong|還元率15%以上
-          - flag = self.data[i].mark
-        else if self.data[i].mark == 'other' && flag != 'other'
-          li.card-title
-            span.crown-icon(data-mark=self.data[i].mark)
-            |還元率15%未満
-          - flag = self.data[i].mark
+            strong|#{LabelMap[flag]}
         li.card.grey.lighten-5.js-clickCard
           div.card-content.row
             .circle.card-image.col.s5
               img(src=self.data[i].image)
             .card-textBox.col.s7
+              if self.data[i].withitemFlg == true
+                .withItem-label
+                  |複数購入
               div
                 p.card-text(data-company)| #{self.data[i].company}
                 p.card-text.js-textAccordion(data-itemName)| !{self.data[i].itemName}
               div
                 p| 税込価格：
                   span(data-priceText)| #{self.data[i].priceText}
-              if self.data[i].withitemFlg == true
-                .withItem-label
-                  |一緒に買うと
-                  br
-                  |ボーナスポイント
               div.card-point
                 //- ここはデータ属性の値によって色を変える4パターン：data-mark="gold",data-mark="silver",data-mark="bronze",data-mark="other"
                 span.crown-icon(data-mark=self.data[i].mark)
@@ -70,10 +53,10 @@ block footer
             a.btn-floating(href="/lawson" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="lawson")
           li
-            a.btn-floating.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.darken-1(href="/famima" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="famima")
           li
-            a.btn-floating.darken-1(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.darken-1(href="/seven" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="seven")
           li
             a.btn-floating.js-top(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
@@ -94,5 +77,5 @@ block footer
             a.btn-floating.js-top(style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="top")
           li
-            a.btn-floating.darken-1(href="/sevenEleven" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
+            a.btn-floating.darken-1(href="/seven" style='opacity: 0; transform: scale(0.4) translateY(0px) translateX(40px);')
               span.footer-icon(data-mark="seven")
